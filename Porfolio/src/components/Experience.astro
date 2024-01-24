@@ -1,0 +1,22 @@
+---
+import ExperienceItems from "./ExperienceItems.astro";
+const EXPERIENCIE = [
+  {
+    date: "Present...",
+    title: "Full Stack Developer practice from Awaq ONGD",
+    description:
+      "Creating a complete page, working as a team for the Awaq organization",
+    link: "",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItems {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
