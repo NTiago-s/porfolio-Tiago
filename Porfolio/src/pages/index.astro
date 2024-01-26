@@ -16,9 +16,11 @@ import CodeIcon from "../components/icons/Code.astro";
 
 <Layout title="Porfolio de Tiago -- Desarrollador y Programador Web">
   <main>
-    <SectionContainer class="py-16 pb-14 lg:py-44 lg:pb-24">
+    <SectionContainer
+      class="py-16 pb-14 lg:py-44 text-center justify-center items-center lg:pb-24"
+    >
       <h1
-        class="flex text-center mt-2 text-white text-2xl lg:text-5xl font-bold lg:flex-row gap-x-4 pb-6 lg:pb-10"
+        class="flex text-center mt-2 text-white justify-center text-2xl lg:text-5xl font-bold lg:flex-row gap-x-4 pb-6 lg:pb-10"
       >
         <span
           class="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-600 rounded text-black p-3"
@@ -34,35 +36,39 @@ import CodeIcon from "../components/icons/Code.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[1120px]">
         <span class="text-yellow-200/90">👨‍💻Desarrollador Web Full Stack.</span>
         <br />
         <span class="text-red-100/90">De Misiones, Argentina.</span>
         <span class="opacity-75"> Especializado en FrontEnd</span>
       </h2>
 
-      <nav class="mt-8 flex gap-4 flex-wrap lg:flex-nowrap">
+      <nav
+        class="mt-8 flex gap-4 flex-wrap text-white justify-center lg:flex-nowrap"
+      >
         <SocialPill href="https://www.linkedin.com/in/tiago-navarro">
-          <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
+          <LinkedInIcon class="size-4 md:size-6 text-white" /> LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/NTiago-s">
-          <GithubIcon class="size-4 md:size-6" /> Github
+          <GithubIcon class="size-4 md:size-6 text-white" /> Github
         </SocialPill>
         <SocialPill href="mailto:navarrotiago194@gmail.com">
-          <EmailICon class="size-4 md:size-6" /> navarrotiago194@gmail.com
+          <EmailICon class="size-4 md:size-6 text-white" /> navarrotiago194@gmail.com
         </SocialPill>
       </nav>
     </SectionContainer>
 
     <SectionContainer id="experiencia">
-      <h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
-        <PortfolioIcon class="size-8 ml-4" />Experiencia Laboral
+      <h2
+        class="text-2xl font-semibold mb-6 flex xl:ml-24 text-white items-center gap-x-3"
+      >
+        <PortfolioIcon class="size-8 ml-4 text-white" />Experiencia Laboral
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id="proyectos" class="mt-24">
-      <h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
-        <CodeIcon class="size-8 ml-4" />Proyectos
+    <SectionContainer id="proyectos" class="mt-24 text-white flex flex-col">
+      <h2 class="text-2xl font-semibold mb-3 flex items-center gap-x-3">
+        <CodeIcon class="size-8 xl:ml-28 text-white" />Proyectos
       </h2>
       <Projects />
     </SectionContainer>

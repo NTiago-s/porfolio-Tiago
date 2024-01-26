@@ -6,4 +6,11 @@ export default {
 		extend: {},
 	},
 	plugins: [],
+	variants: {
+		extend: {
+			backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-focus', 'dark-group-focus'],
+			borderColor: ['dark', 'dark-focus', 'dark-focus-within'],
+			textColor: ['dark', 'dark-hover', 'dark-active'],
+		},
+	},
 }

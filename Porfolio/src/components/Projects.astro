@@ -41,21 +41,21 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, link, Github, image, tags }) => (
-    <article class="gap-6 my-10 ">
-      <h3 class="text-2xl lg:text-4xl">
+    <article class="gap-6 my-10 justify-center xl:ml-28 items-center ">
+      <h3 class="text-2xl lg:text-4xl text-white">
         <span class="text-yellow-200/90">Titulo: </span>
         {title}
       </h3>
-      <p class="text-pretty text-base lg:text-xl mt-3">
+      <p class="text-pretty text-base lg:text-xl text-white mt-3">
         {" "}
         <span class="text-yellow-200/90">Descripcion: </span> {description}
       </p>
 
-      <span class="">
+      <span class="justify-center mx-auto">
         <h3 class="mr-2 mt-4 text-yellow-200/90">Tecnologias Usadas: </h3>
-        <ul class="flex gap-x-2 flex-wrap">
+        <ul class="flex gap-x-2 flex-wrap  mx-auto">
           {tags.map((tag) => (
-            <li class="flex ">{tag}</li>
+            <li class="flex text-white">{tag}</li>
           ))}
         </ul>
       </span>
@@ -63,19 +63,18 @@ const PROJECTS = [
       <span class="flex flex-col my-4">
         <h3 class="text-yellow-200/90">Links del Proyecto: </h3>
         {link && (
-          <a href={link} class="ml-2" target="_blank">
-            {" "}
-            Video Del Proyecto{" "}
+          <a href={link} class="ml-2 text-white" target="_blank">
+            Video Del Proyecto
           </a>
         )}
-        <a href={Github} class="ml-2 " target="_blank">
+        <a href={Github} class="ml-2 text-white" target="_blank">
           {" "}
-          Repositorio del Proyecto{" "}
+          Repositorio del Proyecto{""}
         </a>
       </span>
       <img
         src={image}
-        class="w-auto h-auto md:h-80"
+        class="w-auto h-auto md:h-80 "
         alt={`Captura de Pantalla del Proyecto ${image}`}
       />
     </article>
