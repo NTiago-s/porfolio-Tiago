@@ -2,9 +2,6 @@
 import "@fontsource-variable/onest";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
-import SectionContainer from "../components/SectionContainer.astro";
 interface Props {
   title: string;
 }
@@ -29,12 +26,6 @@ const { title } = Astro.props;
     </div>
     <Header />
     <slot />
-    <SectionContainer id="sobre-mi">
-      <About />
-    </SectionContainer>
-    <SectionContainer id="contacto">
-      <Contact />
-    </SectionContainer>
     <Footer />
   </body>
 </html>
