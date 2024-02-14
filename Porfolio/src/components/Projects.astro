@@ -21,7 +21,6 @@ const PROJECTS = [
     title: "Proyecto Individual",
     description:
       "Proyecto de practica Individual donde puse a prueba todos los conocimientos adquiridos anteriormente",
-    link: "",
     Github: "https://github.com/NTiago-s/PI-Videogames-Henry",
     image: "../../videoGamesImage.webp",
     tags: [
@@ -39,7 +38,8 @@ const PROJECTS = [
     title: "Primer Proyecto que realice.",
     description:
       "Es un proyecto con el que comenze aprendiendo las bases tanto de React, JavaScript , Css , HTML. Asi como tambien dando mis primeros pasos en el backend y database .",
-    link: "https://www.linkedin.com/in/tiago-navarro-30bba2291/recent-activity/all/",
+    video:
+      "https://www.linkedin.com/in/tiago-navarro-30bba2291/recent-activity/all/",
     Github: "https://github.com/NTiago-s/Rick-and-morty-project",
     image: "../../rickimage.webp",
     tags: [
@@ -57,7 +57,7 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, link, Github, image, tags }) => (
+  PROJECTS.map(({ title, description, link, Github, image, tags, video }) => (
     <article class="gap-6 flex mt-6 mb-10 flex-col lg:flex-row justify-center items-center  w-full  lg:w-[1000px] mx-auto">
       <div class="flex flex-col">
         <h3 class="text-2xl lg:text-4xl text-white">
@@ -82,6 +82,11 @@ const PROJECTS = [
           <h3 class="text-yellow-200/90">Links del Proyecto: </h3>
           {link && (
             <a href={link} class="ml-2 text-white" target="_blank">
+              Deploy del proyecto Proyecto
+            </a>
+          )}
+          {video && (
+            <a href={video} class="ml-2 text-white" target="_blank">
               Video Del Proyecto
             </a>
           )}
