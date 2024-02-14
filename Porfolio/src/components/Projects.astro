@@ -85,10 +85,12 @@ const PROJECTS = [
               Video Del Proyecto
             </a>
           )}
-          <a href={Github} class="ml-2 text-white" target="_blank">
-            {" "}
-            Repositorio del Proyecto{""}
-          </a>
+          {Github && (
+            <a href={Github} class="ml-2 text-white" target="_blank">
+              {" "}
+              Repositorio del Proyecto{""}
+            </a>
+          )}
         </span>
       </div>
       <img
