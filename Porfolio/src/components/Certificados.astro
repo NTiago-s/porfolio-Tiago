@@ -1,0 +1,35 @@
+---
+const CERTIFICADOS = [
+  {
+    title: "Certificado de Prácticas Laborales",
+    description:
+      "Reponsable de Frontend, diseño y comunicación. Trabajando con TypeScript, React, Redux, Tailwind y Azure para el deploy. Un equipo de 7 personas realizamos la pasantía de esta ONGD Multinacional que duró desde el 6 de enero hasta el 9 de febrero de 2024",
+    image: "/Certificado Awaq.webp",
+  },
+  {
+    title: "Certificado de Graduación",
+    description:
+      "Certificado de Desarrollador Full Stack con +800 horas de cursada con teoria y ejercicios practicos individuales y grupales donde aprendimos HTML, CSS, JavaScript, React, Redux, Nodejs, Express, Sequelize, PostgreSQL.",
+    image: "/Certificado Henry.webp",
+  },
+];
+
+const onclick = () => {};
+---
+
+{
+  CERTIFICADOS.map(({ image, description, title }) => (
+    <article class="gap-6 flex mt-6 mb-10 flex-col lg:flex-row w-full  lg:w-[1000px] mx-auto">
+      <div>
+        <img
+          src={image}
+          class="max-w-[600px]  w-full md:w-auto h-72 md:h-auto  cursor pointer"
+        />
+      </div>
+      <div class="flex flex-col">
+        <h3 class=" font-semibold text-2xl text-yellow-200/80">{title}</h3>
+        <p class="mt-6 font-normal text-lg">{description}</p>
+      </div>
+    </article>
+  ))
+}

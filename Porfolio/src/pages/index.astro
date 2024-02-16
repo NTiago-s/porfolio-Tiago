@@ -6,17 +6,19 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import Certificados from "../components/Certificados.astro";
 // Iconos
 import GithubIcon from "../components/icons/Github.astro";
 import SocialPill from "../components/SocialPill.astro";
 import EmailICon from "../components/icons/Mail.astro";
 import PortfolioIcon from "../components/icons/PortFolio.astro";
 import CodeIcon from "../components/icons/Code.astro";
+import CertificadosIcon from "../components/icons/CertificadosIcon.astro";
 import About from "../components/About.astro";
 ---
 
 <Layout title="Porfolio de Tiago -- Desarrollador y Programador Web">
-  <main class="mx-auto">
+  <main class="mx-auto w-full">
     <SectionContainer
       class="py-16 pb-14 lg:py-44 text-center justify-center items-center lg:pb-24"
     >
@@ -63,9 +65,18 @@ import About from "../components/About.astro";
       <h2
         class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 w-full lg:w-[1000px] mx-auto"
       >
-        <PortfolioIcon class="size-8 text-white" />Experiencia Laboral
+        <PortfolioIcon class="size-8 text-white" />Experiencia Laboral y
+        Certificados
       </h2>
       <Experience />
+    </SectionContainer>
+    <SectionContainer id="certificados">
+      <h2
+        class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 w-full lg:w-[1000px] mx-auto"
+      >
+        <CertificadosIcon class="size-8 text-white" /> Certificados
+      </h2>
+      <Certificados />
     </SectionContainer>
     <SectionContainer id="proyectos" class="mt-24 text-white flex flex-col">
       <h2
