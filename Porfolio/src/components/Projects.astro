@@ -99,11 +99,13 @@ const PROJECTS = [
           )}
         </span>
       </div>
-      <img
-        src={image}
-        class="w-auto h-auto md:h-80 "
-        alt={`Captura de Pantalla del Proyecto ${image}`}
-      />
+      <div class="w-auto h-auto md:h-80 ">
+        <img
+          src={image}
+          class="w-auto h-full"
+          alt={`Captura de Pantalla del Proyecto ${image}`}
+        />
+      </div>
     </article>
   ))
 }
