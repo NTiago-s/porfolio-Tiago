@@ -1,21 +1,19 @@
 ---
 const PROJECTS = [
   {
-    title: "Proyecto Autenticos Freelance",
+    title: "Proyecto Autenticos",
     description:
-      "Proyecto realizado con un colega, es una pagina de servicios que esta enfocada en charlas de mentalidad para las personas, donde los usuarios se van a poder loguear y comprar (mediante diversos metodos de pago) la cantidad de mentorias que necesiten donde luego le llegan mails con los datos tanto al vendedor como el comprador.",
+      "Proyecto realizado con un colega, para facilitar la venta y organización de mentorseias. Donde los usuarios van a poder comprar la cantidad de mentorias que necesiten.",
     link: "https://autenticos.onrender.com",
     image: "../../autenticos.webp",
     tags: [
       "[HTML]",
-      "[CSS]",
       "[React]",
       "[JavaScript]",
-      "[Tailwind]",
+      "[TailwindCSS]",
       "[NodeJS]",
       "[Mongoose]",
       "[MongoDB]",
-      "[Dolar API]",
       "[Mercado Pago API]",
     ],
   },
@@ -61,21 +59,26 @@ const PROJECTS = [
 {
   PROJECTS.map(({ title, description, link, Github, image, tags, video }) => (
     <article class="gap-6 flex mt-6 mb-10 flex-col lg:flex-row justify-center items-center  w-full  lg:w-[1000px] mx-auto">
-      <div class="flex flex-col">
-        <h3 class="text-2xl lg:text-4xl text-white">
-          <span class="text-yellow-200/90">Titulo: </span>
-          {title}
+      <div>
+        <h3 class="text-2xl lg:text-2xl text-white mb-4">
+          <span class="text-yellow-200/90">{title}</span>
         </h3>
-        <p class="text-pretty text-base lg:text-xl text-white mt-3">
+        <img
+          src={image}
+          class="max-w-[600px]  w-full md:w-auto h-72 md:h-auto "
+        />
+      </div>
+      <div class="flex flex-col">
+        <p class="text-balance text-sm lg:text-base text-white mt-3">
           {" "}
-          <span class="text-yellow-200/90">Descripcion: </span> {description}
+          {description}
         </p>
 
         <span class="justify-center xl:mx-auto">
           <h3 class="mr-2 mt-4 text-yellow-200/90">Tecnologias Usadas: </h3>
           <ul class="flex gap-x-2 flex-wrap  xl:mx-auto">
             {tags.map((tag) => (
-              <li class="flex text-white">{tag}</li>
+              <li class="flex text-white text-base">{tag}</li>
             ))}
           </ul>
         </span>
@@ -99,13 +102,6 @@ const PROJECTS = [
             </a>
           )}
         </span>
-      </div>
-      <div>
-        <img
-          src={image}
-          class="max-w-[600px]  w-full md:w-auto h-72 md:h-auto"
-          alt={`Captura de Pantalla del Proyecto ${image}`}
-        />
       </div>
     </article>
   ))
