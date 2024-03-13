@@ -58,7 +58,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, link, Github, image, tags, video }) => (
-    <article class="gap-6 flex mt-6 mb-10 flex-col lg:flex-row justify-center items-center  w-full  lg:w-[1000px] mx-auto">
+    <article class="flex flex-col lg:flex-row justify-center items-center gap-6 mt-6 mb-10 w-full lg:w-[1000px] mx-auto">
       <div>
         <h3 class="text-2xl lg:text-2xl text-white mb-4">
           <span class="text-yellow-200/90">{title}</span>
@@ -66,40 +66,51 @@ const PROJECTS = [
         <img
           src={image}
           alt="imagen proyecto"
-          class="max-w-[600px]  w-full md:w-auto h-72 md:h-auto "
+          class="max-w-[450px]  w-full md:w-auto h-72 md:h-auto"
         />
       </div>
       <div class="flex flex-col">
         <p class="text-balance text-sm lg:text-base text-white mt-3">
-          {" "}
           {description}
         </p>
-
         <span class="justify-center xl:mx-auto">
           <h3 class="mr-2 mt-4 text-yellow-200/90">Tecnologias Usadas: </h3>
-          <ul class="flex gap-x-2 flex-wrap  xl:mx-auto">
+          <ul class="flex gap-x-2 flex-wrap xl:mx-auto">
             {tags.map((tag) => (
               <li class="flex text-white text-base">{tag}</li>
             ))}
           </ul>
         </span>
-
         <span class="flex flex-col my-4">
           <h3 class="text-yellow-200/90">Links del Proyecto: </h3>
           {link && (
-            <a href={link} class="ml-2 text-white" target="_blank">
+            <a
+              href={link}
+              class="ml-2 text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Deploy del Proyecto
             </a>
           )}
           {video && (
-            <a href={video} class="ml-2 text-white" target="_blank">
+            <a
+              href={video}
+              class="ml-2 text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Video Del Proyecto
             </a>
           )}
           {Github && (
-            <a href={Github} class="ml-2 text-white" target="_blank">
-              {" "}
-              Repositorio del Proyecto{""}
+            <a
+              href={Github}
+              class="ml-2 text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Repositorio del Proyecto
             </a>
           )}
         </span>
