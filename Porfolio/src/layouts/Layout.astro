@@ -14,12 +14,12 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="px-4 flex">
+  <body>
     <div
       class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(175%_165%_at_50%_10%,#000_40%,#63e_100%)]"
     >
@@ -31,6 +31,7 @@ const { title } = Astro.props;
     <Footer />
   </body>
 </html>
+
 <style is:global>
   :root {
     margin: 0;
@@ -44,9 +45,9 @@ const { title } = Astro.props;
     background-color: #050505;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh; /* Height to fill the viewport */
+    margin: 0; /* Remove default body margin */
   }
-
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
