@@ -25,28 +25,11 @@ const PROJECTS = [
       "[Mercado Pago API]",
     ],
   },
-  {
-    title: "Proyecto Individual",
-    description:
-      "Proyecto de practica Individual donde puse a prueba todos los conocimientos adquiridos anteriormente",
-    Github: "https://github.com/NTiago-s/PI-Videogames-Henry",
-    image: "../../videoGamesImage.webp",
-    tags: [
-      "[HTML]",
-      "[CSS]",
-      "[React]",
-      "[JavaScript]",
-      "[Redux]",
-      "[NodeJS]",
-      "[Sequelize]",
-      "[PostgresSQL]",
-    ],
-  },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, link, Github, image, tags }) => (
+  PROJECTS.map(({ title, description, link, image, tags }) => (
     <article class="flex flex-col lg:flex-row justify-center items-center gap-6 mt-6 mb-10 w-full lg:w-[1000px] mx-auto">
       <div>
         <h3 class="text-2xl lg:text-2xl text-white mb-4">
@@ -55,14 +38,12 @@ const PROJECTS = [
         <img
           src={image}
           alt="imagen proyecto"
-          class="max-w-[450px]  w-full md:w-auto h-72 md:h-auto"
+          class="max-w-350 xl:max-w-[450px] w-full md:w-auto h-72 md:h-auto rounded-xl"
         />
       </div>
       <div class="flex flex-col">
-        <p class="text-sm lg:text-base text-white mt-3 text-pretty">
-          {description}
-        </p>
-        <span class="mx-auto lg:mx-0">
+        <p class="text-sm lg:text-base text-white text-pretty">{description}</p>
+        <span class="">
           <h3 class="mr-2 text-yellow-200/90">Tecnologias Usadas: </h3>
           <ul class="flex gap-x-2 flex-wrap xl:mx-auto">
             {tags.map((tag) => (
@@ -80,16 +61,6 @@ const PROJECTS = [
               rel="noopener noreferrer"
             >
               Deploy del Proyecto
-            </a>
-          )}
-          {Github && (
-            <a
-              href={Github}
-              class="ml-2 text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repositorio del Proyecto
             </a>
           )}
         </span>
