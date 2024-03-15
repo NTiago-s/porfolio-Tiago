@@ -65,33 +65,35 @@ import DescargarCV from "../components/icons/DescargarCV.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
-      <h2
-        class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 w-full md:ml-20 lg:w-[1000px] mx-auto"
-      >
-        <PortfolioIcon class="size-8 text-white" />Experiencia Laboral y
-        Certificados
-      </h2>
-      <Experience />
-    </SectionContainer>
-    <SectionContainer id="certificados">
-      <h2
-        class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 w-full lg:w-[1000px] md:ml-20 mx-auto"
-      >
-        <CertificadosIcon class="size-8 text-white" /> Certificados
-      </h2>
-      <Certificados />
-    </SectionContainer>
-    <SectionContainer id="proyectos" class="mt-24 text-white flex flex-col">
-      <h2
-        class="text-2xl font-semibold mb-3 flex items-center gap-x-3 w-full lg:w-[1000px] md:ml-20 mx-auto"
-      >
-        <CodeIcon class="size-8 text-white" />Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-    <SectionContainer id="sobre-mi">
-      <About />
-    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <h2
+          class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 md:ml-20 lg:max-w-[1000px] mx-auto"
+        >
+          <PortfolioIcon class="size-8 text-white" />Experiencia Laboral y
+          Certificados
+        </h2>
+        <Experience />
+      </SectionContainer>
+      <SectionContainer id="certificados">
+        <h2
+          class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 lg:max-w-[1000px] md:ml-20 mx-auto"
+        >
+          <CertificadosIcon class="size-8 text-white" /> Certificados
+        </h2>
+        <Certificados />
+      </SectionContainer>
+      <SectionContainer id="proyectos" class="mt-24 text-white flex flex-col">
+        <h2
+          class="text-2xl font-semibold mb-3 flex items-center gap-x-3 lg:max-w-[1000px] md:ml-20"
+        >
+          <CodeIcon class="size-8 text-white" />Proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+      <SectionContainer id="sobre-mi">
+        <About />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>

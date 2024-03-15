@@ -12,11 +12,11 @@ const EXPERIENCIE = [
 ---
 
 <ol
-  class="relative border-s md:ms-20 w-full justify-center lg:w-[1000px] border-gray-200 dark:border-gray-700"
+  class="relative border-s md:ms-20 justify-center lg:max-w-[1000px] border-gray-200 dark:border-gray-700"
 >
   {
     EXPERIENCIE.map((experiencie) => (
-      <li class="mb-10 -ms-10">
+      <li>
         <ExperienceItems {...experiencie} />
       </li>
     ))
