@@ -1,9 +1,5 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Link from "./icons/Link.astro";
-import LinkButton from "./LinkButton.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import HTML from "./icons/HTML.astro";
 import CSS from "./icons/CSS.astro";
@@ -12,6 +8,8 @@ import MongoDB from "./icons/MongoDB.astro";
 import Nodejs from "./icons/Nodejs.astro";
 import ASTRO from "./icons/ASTRO.astro";
 import Postgresql from "./icons/Postgresql.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   MongoDB: {
@@ -64,19 +62,25 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    title:
-      "Proyecto de practica para funcionalidad de comentarios y publicaciones",
+    title: "La Mestiza",
     description:
-      "Es un poryecto que realize para aprender a manejar correctamente redux toolkit , dandole una funcionalidad similar a twitter de comentarios y publicaciones , tambien le agregue un sistema de usuarios administradores y usuarios comunes , con un filtro por tematicas de cada publicación",
+      "Página web para La Mestiza (restaurante), que ofrece una experiencia única a sus clientes. Mediante un código QR, los usuarios pueden acceder a una plataforma que proporciona información sobre el lugar, incluyendo datos de contacto, ubicación, la carta dividida por secciones, etc. presentada de manera estética y original. Cuenta con una óptima optimización y SEO para mejorar su visibilidad. Además, ofrecemos gestión de redes sociales para potenciar el marketing digital del establecimiento.",
+    link: "https://la-mestiza.netlify.app/",
+    image: "../../mestiza.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
+  },
+  {
+    title: "Proyecto de practica",
+    description:
+      "Es un proyecto que realize para aprender a manejar correctamente redux toolkit , dandole una funcionalidad similar a twitter de comentarios y publicaciones , tambien le agregue un sistema de usuarios administradores y usuarios comunes , con un filtro por tematicas de cada publicación",
     link: "https://darwoft-blog.onrender.com",
     image: "../../blogd.webp",
     tags: [
-      "[React]",
-      "[JavaScript]",
-      "[TailwindCSS]",
-      "[NodeJS]",
-      "[Redux Toolkit]",
-      "[MongoDB]",
+      TAGS.React,
+      TAGS.JavaScript,
+      TAGS.TAILWIND,
+      TAGS.Nodejs,
+      TAGS.MongoDB,
     ],
   },
   {
@@ -85,7 +89,7 @@ const PROJECTS = [
       "Emprendimiento realizado junto a un grupo de amigos para trabajar de forma Freelance vendiendo servicios de Desarrollo Web FullStack, Edición de Video, Producción Musical, Diseño Gráfico y de Logos y Marketing Digital.",
     link: "https://codeluxe.tech",
     image: "../../codeluxe.webp",
-    tags: ["[Astro]", "[JavaScript]", "[TailwindCSS]"],
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
   },
   {
     title: "Proyecto Autenticos",
@@ -94,14 +98,12 @@ const PROJECTS = [
     link: "https://autenticos.onrender.com",
     image: "../../autenticos.webp",
     tags: [
-      "[HTML]",
-      "[React]",
-      "[JavaScript]",
-      "[TailwindCSS]",
-      "[NodeJS]",
-      "[Mongoose]",
-      "[MongoDB]",
-      "[Mercado Pago API]",
+      TAGS.HTML,
+      TAGS.React,
+      TAGS.JavaScript,
+      TAGS.TAILWIND,
+      TAGS.Nodejs,
+      TAGS.MongoDB,
     ],
   },
 ];
@@ -125,24 +127,26 @@ const PROJECTS = [
           {description}
         </p>
         <span class="">
-          <h3 class="mr-2 text-yellow-200/90">Tecnologias Usadas: </h3>
-          <ul class="flex gap-x-2 flex-wrap xl:mx-auto">
+          <h3 class="mr-2 mt-4 text-yellow-200/90">Tecnologias Usadas: </h3>
+          <ul class="flex  flex-wrap flex-row mb-2 gap-2">
             {tags.map((tag) => (
-              <li class="flex text-white text-base">{tag}</li>
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
             ))}
           </ul>
         </span>
         <span class="flex flex-col my-4">
-          <h3 class="text-yellow-200/90">Links del Proyecto: </h3>
           {link && (
-            <a
-              href={link}
-              class="ml-2 text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Deploy del Proyecto
-            </a>
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
           )}
         </span>
       </div>
