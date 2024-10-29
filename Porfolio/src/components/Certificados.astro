@@ -17,17 +17,19 @@ const CERTIFICADOS = [
 
 {
   CERTIFICADOS.map(({ image, description, title }) => (
-    <article class="gap-6 flex mt-6 md:px-20 mb-10 flex-col lg:flex-row w-full  lg:w-[1000px] mx-auto">
-      <div>
+    <article class="flex flex-col sm:flex-row gap-6 my-6 w-full">
+      <div class="flex flex-col w-full ">
         <img
           src={image}
-          class="max-w-[500px]  w-full md:w-auto h-72 md:h-auto rounded-xl"
+          class="sm:w-auto object-cover lg:w-full cursor-pointer rounded-md shadow-md transition-all hover:shadow-xl hover:shadow-white/30"
           alt="imagen Certificado"
         />
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col md:max-w-none gap-2 sm:max-w-[500px] w-full">
         <h3 class=" font-semibold text-2xl text-yellow-200/80">{title}</h3>
-        <p class="mt-6 text-white font-normal text-lg">{description}</p>
+        <p class="mt-6 text-white font-normal text-sm sm:text-base">
+          {description}
+        </p>
       </div>
     </article>
   ))

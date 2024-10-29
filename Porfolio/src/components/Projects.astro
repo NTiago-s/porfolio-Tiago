@@ -62,20 +62,44 @@ const TAGS = {
 
 const PROJECTS = [
   {
+    title: "Autenticos",
+    description:
+      "Proyecto realizado de manera freelance, para facilitar la venta y organización de mentorias. Cuenta con autenticacion de usuarios, esta integrada tambien la pasarela de pago de Mercado Pago facilitando la compra ya que le permite al usuario tener una pre-visualización del precio de la mentoria a comprar, tambien esta implementado una funcionalidad para mantener el precio del dolar actualizado al momento en argentina",
+    link: "https://autenticos.onrender.com",
+    image: "../../autenticos.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.React,
+      TAGS.JavaScript,
+      TAGS.TAILWIND,
+      TAGS.Nodejs,
+      TAGS.MongoDB,
+    ],
+  },
+
+  {
+    title: "La Mestiza",
+    description:
+      "Página web para La Mestiza (restaurante), que ofrece una experiencia única a sus clientes. Mediante un código QR, los usuarios pueden acceder a una plataforma que proporciona información sobre el lugar, incluyendo datos de contacto, ubicación, la carta presentada de manera estética y original. Cuenta con una óptima optimización y SEO para mejorar su visibilidad.",
+    link: "https://lamestiza.netlify.app",
+    image: "../../mestiza.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
+  },
+  {
+    title: "Codeluxe",
+    description:
+      "Emprendimiento realizado junto a un grupo de amigos para trabajar de forma Freelance vendiendo servicios de Desarrollo Web FullStack, Edición de Video, Producción Musical, Diseño Gráfico, de Logos y Marketing Digital.",
+    link: "https://codeluxe.tech",
+    image: "../../codeluxe.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
+  },
+  {
     title: "Club Deportivo Sarmiento",
     description:
       "Deportivo Sarmiento es un club deportivo para el cual se desarrolló una aplicación web que facilita la administración del flujo de socios, tipos de socios, cobradores, recibos, gastos, y proporciona estadísticas sobre métodos de pago, entre otras funcionalidades. Se trata de una aplicación muy completa y con altos estándares de seguridad.",
     link: "",
     image: "../../deportivo.webp",
     tags: [TAGS.React, TAGS.Nodejs, TAGS.MongoDB, TAGS.TAILWIND],
-  },
-  {
-    title: "La Mestiza",
-    description:
-      "Página web para La Mestiza (restaurante), que ofrece una experiencia única a sus clientes. Mediante un código QR, los usuarios pueden acceder a una plataforma que proporciona información sobre el lugar, incluyendo datos de contacto, ubicación, la carta dividida por secciones, asi como tambien un sistema para administrar tanto los pedidos, como las ventas de los platos del restaurante ya sea por mes o anual de la recaudacion total de cada venta. Cuenta con una óptima optimización y SEO para mejorar su visibilidad.",
-    link: "https://lamestiza.netlify.app",
-    image: "../../mestiza.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
   },
   {
     title: "Proyecto de practica",
@@ -91,49 +115,24 @@ const PROJECTS = [
       TAGS.MongoDB,
     ],
   },
-  {
-    title: "Codeluxe",
-    description:
-      "Emprendimiento realizado junto a un grupo de amigos para trabajar de forma Freelance vendiendo servicios de Desarrollo Web FullStack, Edición de Video, Producción Musical, Diseño Gráfico, de Logos y Marketing Digital.",
-    link: "https://codeluxe.tech",
-    image: "../../codeluxe.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JavaScript],
-  },
-  {
-    title: "Autenticos",
-    description:
-      "Proyecto realizado de manera freelance, para facilitar la venta y organización de mentorias. Cuenta con autenticacion de usuarios, esta integrada tambien la pasarela de pago de Mercado Pago facilitando la compra ya que le permite al usuario tener una pre-visualización del precio de la mentoria a comprar, tambien esta implementado una funcionalidad para mantener el precio del dolar actualizado al momento en argentina",
-    link: "https://autenticos.onrender.com",
-    image: "../../autenticos.webp",
-    tags: [
-      TAGS.HTML,
-      TAGS.React,
-      TAGS.JavaScript,
-      TAGS.TAILWIND,
-      TAGS.Nodejs,
-      TAGS.MongoDB,
-    ],
-  },
 ];
 ---
 
 {
   PROJECTS.map(({ title, description, link, image, tags }) => (
-    <article class="flex flex-col lg:flex-row justify-center md:px-20 gap-6 mt-6 mb-10 w-full lg:w-[1000px] mx-auto">
-      <div>
-        <h3 class="text-2xl lg:text-2xl text-white mb-4">
-          <span class="text-yellow-200/90">{title}</span>
-        </h3>
+    <article class="flex flex-col sm:flex-row gap-6 my-6 w-full">
+      <div class="flex flex-col  w-full">
         <img
           src={image}
-          alt="imagen proyecto"
-          class="max-w-[500px]  w-full md:w-auto h-72 md:h-auto rounded-xl"
+          alt={title}
+          class="sm:w-auto object-cover lg:w-full cursor-pointer rounded-md shadow-md transition-all hover:shadow-xl hover:shadow-white/30"
         />
       </div>
-      <div class="flex flex-col">
-        <p class="text-sm lg:text-base text-white lg:mt-12 text-pretty">
-          {description}
-        </p>
+      <div class="flex flex-col justify-center gap-2 sm:max-w-[500px] w-full">
+        <h3 class="text-2xl lg:text-2xl text-white">
+          <span class="text-yellow-200/90">{title}</span>
+        </h3>
+        <p class="text-sm lg:text-base text-white text-pretty">{description}</p>
         <span class="">
           <h3 class="mr-2 mt-4 text-yellow-200/90">Tecnologias Usadas: </h3>
           <ul class="flex  flex-wrap flex-row mb-2 gap-2">
@@ -150,12 +149,10 @@ const PROJECTS = [
           </ul>
         </span>
         <span class="flex flex-col my-4">
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Link del Proyecto
-            </LinkButton>
-          )}
+          <LinkButton href={link ?? "/"}>
+            <Link class="size-4" />
+            {link ? "Link del Proyecto" : "Link privado"}
+          </LinkButton>
         </span>
       </div>
     </article>

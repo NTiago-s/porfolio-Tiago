@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Certificados from "../components/Certificados.astro";
 // Iconos
@@ -13,12 +12,11 @@ import SocialPill from "../components/SocialPill.astro";
 import EmailICon from "../components/icons/Mail.astro";
 import PortfolioIcon from "../components/icons/PortFolio.astro";
 import CodeIcon from "../components/icons/Code.astro";
-import CertificadosIcon from "../components/icons/CertificadosIcon.astro";
 import About from "../components/About.astro";
 import DescargarCV from "../components/icons/DescargarCV.astro";
 ---
 
-<Layout title="Porfolio de Tiago -- Desarrollador y Programador Web">
+<Layout title="Tiago Navarro - Portfolio">
   <main class="px-4 w-full text-balance">
     <SectionContainer
       class="py-16 mx-auto pb-14 mt-16 lg:py-44 text-center justify-center items-center lg:pb-24"
@@ -26,11 +24,8 @@ import DescargarCV from "../components/icons/DescargarCV.astro";
       <h1
         class="flex text-center mt-6 w-full lg:w-[1000px] mx-auto text-white justify-center text-2xl lg:text-5xl font-bold lg:flex-row gap-x-4 pb-4 lg:pb-10"
       >
-        <span
-          class="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-600 rounded text-black p-1 lg:p-3"
-        >
-          Hola, Soy Tiago</span
-        >
+        Hola, soy Tiago
+
         <a
           href="https://www.linkedin.com/in/tiago-navarro-30bba2291/"
           target="_blank"
@@ -47,16 +42,16 @@ import DescargarCV from "../components/icons/DescargarCV.astro";
       </h2>
 
       <nav
-        class="mt-8 flex gap-4 flex-wrap text-white w-full justify-center lg:w-[1000px] mx-auto lg:flex-nowrap"
+        class="mt-8 flex gap-4 flex-wrap text-white w-full justify-center mx-auto lg:flex-nowrap"
       >
+        <SocialPill href="mailto:navarrotiago194@gmail.com">
+          <EmailICon class="size-4 md:size-6 text-white" /> navarrotiago194@gmail.com
+        </SocialPill>
         <SocialPill href="https://www.linkedin.com/in/tiago-navarro-30bba2291/">
           <LinkedInIcon class="size-4 md:size-6 text-white" /> LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/NTiago-s">
           <GithubIcon class="size-4 md:size-6 text-white" /> Github
-        </SocialPill>
-        <SocialPill href="mailto:navarrotiago194@gmail.com">
-          <EmailICon class="size-4 md:size-6 text-white" /> navarrotiago194@gmail.com
         </SocialPill>
         <SocialPill href="/Navarro Tiago CV.pdf" download>
           <DescargarCV class="size-4 md:size-6 text-white" /> Descargar CV
@@ -65,26 +60,14 @@ import DescargarCV from "../components/icons/DescargarCV.astro";
     </SectionContainer>
 
     <div class="space-y-24">
-      <SectionContainer id="experiencia">
-        <h2
-          class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 md:ml-20 lg:max-w-[1000px] mx-auto"
-        >
-          <PortfolioIcon class="size-8 text-white" />Experiencia Laboral
-        </h2>
-        <Experience />
-      </SectionContainer>
       <SectionContainer id="certificados">
-        <h2
-          class="text-2xl font-semibold mb-6 flex text-white items-center gap-x-3 lg:max-w-[1000px] md:ml-20 mx-auto"
-        >
-          <CertificadosIcon class="size-8 text-white" /> Certificados
+        <h2 class="text-2xl font-semibold mb-3 flex items-center gap-x-3">
+          <PortfolioIcon class="size-8 text-white" />Experiencia + Certificados
         </h2>
         <Certificados />
       </SectionContainer>
-      <SectionContainer id="proyectos" class="mt-24 text-white flex flex-col">
-        <h2
-          class="text-2xl font-semibold mb-3 flex items-center gap-x-3 lg:max-w-[1000px] md:ml-20"
-        >
+      <SectionContainer id="proyectos">
+        <h2 class="text-2xl font-semibold mb-3 flex items-center gap-x-3">
           <CodeIcon class="size-8 text-white" />Proyectos
         </h2>
         <Projects />
