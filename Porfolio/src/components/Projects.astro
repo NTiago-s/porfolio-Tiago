@@ -10,12 +10,23 @@ import ASTRO from "./icons/ASTRO.astro";
 import Postgresql from "./icons/Postgresql.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-
+import Prisma from "./icons/Prisma.astro";
+import NextJS from "./icons/NextJS.astro";
 const TAGS = {
   MongoDB: {
     name: "MongoDB",
     class: "bg-[#10aa50] text-white",
     icon: MongoDB,
+  },
+  Next: {
+    name: "Next",
+    class: "bg-white text-black",
+    icon: NextJS,
+  },
+  PrismaDB: {
+    name: "Prisma",
+    class: "bg-white text-[#133a51ff]",
+    icon: Prisma,
   },
   TAILWIND: {
     name: "Tailwind",
@@ -61,6 +72,14 @@ const TAGS = {
 };
 
 const PROJECTS = [
+  {
+    title: "WK Services",
+    description:
+      "WK Services es un proyecto innovador de reparación de electrodomésticos en Coronel Suárez, con una interfaz moderna, un dashboard de gestión de reparaciones y clientes, y un enfoque en la seguridad.",
+    link: "",
+    image: "../../wkservices.webp",
+    tags: [TAGS.Next, TAGS.TAILWIND, TAGS.PrismaDB, TAGS.PostgreSQL],
+  },
   {
     title: "Autenticos",
     description:
