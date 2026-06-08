@@ -1,0 +1,132 @@
+---
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+interface Tag {
+  name: string;
+  className: string;
+}
+
+interface Project {
+  title: string;
+  eyebrow: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  width: number;
+  height: number;
+  link: string | null;
+  featured?: boolean;
+  tags: Tag[];
+}
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+const revealDelays = [
+  "[animation-delay:0ms]",
+  "[animation-delay:80ms]",
+  "[animation-delay:160ms]",
+  "[animation-delay:240ms]",
+  "[animation-delay:320ms]",
+  "[animation-delay:400ms]",
+  "[animation-delay:480ms]",
+];
+const revealDelay = revealDelays[index] ?? revealDelays[revealDelays.length - 1];
+---
+
+<article
+  class={`group relative animate-fade-up overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.035] shadow-[0_24px_80px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1 hover:border-cyan/35 ${revealDelay} ${
+    project.featured ? "lg:col-span-2" : ""
+  }`}
+>
+  <div
+    class="pointer-events-none absolute inset-x-0 top-0 h-24 -translate-y-full bg-gradient-to-b from-cyan/15 to-transparent opacity-0 transition duration-300 group-hover:animate-panel-scan group-hover:opacity-100"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class={`grid h-full gap-0 ${project.featured ? "lg:grid-cols-[1.1fr_0.9fr]" : ""}`}>
+    <a
+      href={project.link ?? "#contacto"}
+      target={project.link ? "_blank" : undefined}
+      rel={project.link ? "nofollow noopener noreferrer" : undefined}
+      class="relative block overflow-hidden bg-ink-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/70"
+      aria-label={`${project.title}: ${project.link ? "abrir proyecto" : "consultar proyecto"}`}
+    >
+      <img
+        src={project.image}
+        alt={project.imageAlt}
+        width={project.width}
+        height={project.height}
+        loading="lazy"
+        decoding="async"
+        fetchpriority="auto"
+        class={`h-full min-h-[250px] w-full object-cover transition duration-500 group-hover:scale-[1.025] ${
+          project.featured ? "lg:min-h-[470px]" : "sm:min-h-[310px]"
+        }`}
+      />
+      <span
+        class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent opacity-70"
+        aria-hidden="true"
+      >
+      </span>
+    </a>
+
+    <div class="flex h-full flex-col justify-between gap-8 p-5 sm:p-6 lg:p-8">
+      <div class="space-y-5">
+        <div class="flex flex-wrap items-center gap-2">
+          <span
+            class="rounded-full border border-cyan/25 bg-cyan/10 px-3 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-cyan"
+          >
+            {project.eyebrow}
+          </span>
+          {
+            project.featured && (
+              <span class="rounded-full border border-ember/30 bg-ember/10 px-3 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-red-100">
+                Nuevo
+              </span>
+            )
+          }
+        </div>
+
+        <div class="space-y-3">
+          <h3 class="text-2xl font-black leading-tight text-bone sm:text-3xl">
+            {project.title}
+          </h3>
+          <p class="max-w-2xl text-sm leading-7 text-smoke sm:text-base">
+            {project.description}
+          </p>
+        </div>
+
+        <ul class="flex flex-wrap gap-2" aria-label={`Tecnologias de ${project.title}`}>
+          {
+            project.tags.map((tag) => (
+              <li>
+                <span
+                  class={`inline-flex min-h-8 items-center rounded-full border px-3 py-1.5 text-xs font-bold ${tag.className}`}
+                >
+                  {tag.name}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <LinkButton
+        href={project.link ?? "mailto:navarrotiago194@gmail.com?subject=Consulta%20por%20proyecto%20Franco%20Bertello%20Store"}
+        target={project.link ? "_blank" : undefined}
+        rel={project.link ? "nofollow noopener noreferrer" : undefined}
+        variant={project.link ? "secondary" : "primary"}
+        ariaLabel={project.link ? `Abrir ${project.title}` : `Consultar por ${project.title}`}
+      >
+        <Link class="size-4" aria-hidden="true" />
+        {project.link ? "Ver proyecto" : "Contactar"}
+      </LinkButton>
+    </div>
+  </div>
+</article>

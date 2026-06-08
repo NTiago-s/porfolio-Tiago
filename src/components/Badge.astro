@@ -1,0 +1,20 @@
+---
+interface Props {
+  tone?: "cyan" | "ember" | "neutral";
+  class?: string;
+}
+
+const { tone = "cyan", class: className = "" } = Astro.props;
+
+const tones: Record<NonNullable<Props["tone"]>, string> = {
+  cyan: "border-cyan/35 bg-cyan/10 text-cyan",
+  ember: "border-ember/35 bg-ember/10 text-red-100",
+  neutral: "border-white/10 bg-white/[0.04] text-smoke",
+};
+---
+
+<span
+  class={`inline-flex items-center rounded-full border px-3 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] ${tones[tone]} ${className}`}
+>
+  <slot />
+</span>

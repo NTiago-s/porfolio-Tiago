@@ -1,0 +1,102 @@
+---
+import { SKILLS, SITE } from "../data/portfolio";
+import Badge from "./Badge.astro";
+
+const PROFILE_FACTS = [
+  { label: "Base", value: "Misiones, AR" },
+  { label: "Foco", value: "Full Stack UI" },
+];
+---
+
+<div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+  <aside class="relative mx-auto w-full max-w-md" aria-label="Perfil de Tiago Navarro">
+    <div
+      class="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle_at_50%_20%,rgba(55,245,231,0.2),transparent_55%)] blur-2xl"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-panel p-3 shadow-neon">
+      <div
+        class="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(55,245,231,0.1),transparent_36%,rgba(244,63,70,0.08))]"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="relative flex items-center justify-between border-b border-white/10 px-3 pb-3">
+        <div class="flex items-center gap-2" aria-hidden="true">
+          <span class="size-2.5 rounded-full bg-ember"></span>
+          <span class="size-2.5 rounded-full bg-yellow-200/80"></span>
+          <span class="size-2.5 rounded-full bg-cyan"></span>
+        </div>
+        
+      </div>
+
+      <div class="relative mt-3 overflow-hidden rounded-[1.45rem] border border-white/10 bg-ink">
+        <div
+          class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan to-transparent"
+          aria-hidden="true"
+        >
+        </div>
+        <img
+          src="/tiago.webp"
+          alt={`Retrato de ${SITE.name}`}
+          width="600"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          class="aspect-[4/5] w-full object-cover object-[center_38%] saturate-[0.92]"
+        />
+        <div
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,transparent_38%,rgba(5,7,8,0.58)_78%)]"
+          aria-hidden="true"
+        >
+        </div>
+      </div>
+
+      <div class="relative grid gap-2 pt-3 sm:grid-cols-2">
+        {
+          PROFILE_FACTS.map((fact) => (
+            <div class="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3">
+              <p class="font-mono text-[0.65rem] font-bold uppercase tracking-[0.22em] text-cyan">
+                {fact.label}
+              </p>
+              <p class="mt-1 text-sm font-black text-bone">{fact.value}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </aside>
+
+  <div class="space-y-7">
+    <div class="space-y-4">
+      <Badge tone="neutral">Sobre mi</Badge>
+      <h2 class="max-w-3xl text-3xl font-black leading-tight text-bone sm:text-5xl">
+        Desarrollo interfaces que se sienten claras, rapidas y listas para negocio.
+      </h2>
+    </div>
+
+    <div class="space-y-4 text-base leading-8 text-smoke">
+      <p>
+        Soy Tiago Navarro, desarrollador web full stack de Misiones, Argentina. Empece
+        programando en C y hoy construyo productos web completos, desde interfaces
+        responsive hasta dashboards, integraciones y flujos de datos.
+      </p>
+      <p>
+        Me gusta trabajar donde diseno y logica se encuentran: experiencias visuales
+        cuidadas, arquitectura legible, performance real y detalles que ayudan a que
+        cada accion del usuario sea entendible.
+      </p>
+    </div>
+
+    <ul class="grid gap-2 sm:grid-cols-2" aria-label="Especialidades">
+      {
+        SKILLS.map((skill) => (
+          <li class="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-semibold text-bone">
+            {skill}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

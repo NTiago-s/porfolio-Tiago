@@ -1,0 +1,198 @@
+---
+import "@fontsource-variable/onest";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE } from "../data/portfolio";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${SITE.name} | ${SITE.role}`,
+  description = SITE.description,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, SITE.url).toString();
+const socialImage = new URL("/fb-store.webp", SITE.url).toString();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#050708" />
+    <meta
+      name="keywords"
+      content="Tiago Navarro, portfolio, desarrollador full stack, Astro, Next.js, Tailwind, SEO, Argentina"
+    />
+    <meta name="author" content={SITE.name} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta
+      property="og:image:alt"
+      content="Proyecto destacado Franco Bertello Store desarrollado por Tiago Navarro"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/webp" href="/profile-pic (1).webp" />
+    <link rel="apple-touch-icon" href="/profile-pic (1).webp" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="site-backdrop" aria-hidden="true">
+      <div class="site-grid"></div>
+      <div class="site-glow site-glow-cyan"></div>
+      <div class="site-glow site-glow-ember"></div>
+    </div>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+    --color-canvas: #050708;
+    --color-panel: #0a1013;
+    --color-panel-lift: #101a1f;
+    --color-text: #f2fafa;
+    --color-text-soft: #9eb2b4;
+    --color-border: rgba(242, 250, 250, 0.1);
+    --color-cyan: #37f5e7;
+    --color-ember: #f43f46;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--color-canvas);
+    font-family: "Onest Variable", ui-sans-serif, system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--color-canvas);
+    color: var(--color-text);
+    text-rendering: optimizeLegibility;
+  }
+
+  body::selection {
+    background: rgba(55, 245, 231, 0.25);
+    color: var(--color-text);
+  }
+
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 60;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-text);
+    color: var(--color-canvas);
+    font-size: 0.875rem;
+    font-weight: 700;
+    opacity: 0;
+    padding: 0.7rem 1rem;
+    transform: translateY(-150%);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  .skip-link:focus {
+    opacity: 1;
+    outline: 3px solid rgba(55, 245, 231, 0.45);
+    transform: translateY(0);
+  }
+
+  .site-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 52% -10%, rgba(55, 245, 231, 0.13), transparent 34rem),
+      radial-gradient(circle at 95% 6%, rgba(244, 63, 70, 0.18), transparent 28rem),
+      linear-gradient(180deg, #050708 0%, #071012 45%, #050708 100%);
+  }
+
+  .site-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(242, 250, 250, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 250, 250, 0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .site-glow {
+    position: absolute;
+    width: 34rem;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    filter: blur(72px);
+    opacity: 0.16;
+  }
+
+  .site-glow-cyan {
+    left: -18rem;
+    top: 16rem;
+    background: var(--color-cyan);
+  }
+
+  .site-glow-ember {
+    bottom: 18rem;
+    right: -20rem;
+    background: var(--color-ember);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>

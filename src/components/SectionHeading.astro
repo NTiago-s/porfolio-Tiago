@@ -1,0 +1,21 @@
+---
+import Badge from "./Badge.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}
+
+const { eyebrow, title, description } = Astro.props;
+---
+
+<div class="mb-8 max-w-3xl space-y-4">
+  <Badge tone="neutral">{eyebrow}</Badge>
+  <h2 class="text-3xl font-black leading-tight text-bone sm:text-5xl">{title}</h2>
+  {
+    description && (
+      <p class="text-base leading-8 text-smoke sm:text-lg">{description}</p>
+    )
+  }
+</div>

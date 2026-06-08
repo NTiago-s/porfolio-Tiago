@@ -1,0 +1,28 @@
+---
+import { CERTIFICATES } from "../data/portfolio";
+---
+
+<div class="grid gap-5 lg:grid-cols-2">
+  {
+    CERTIFICATES.map((certificate) => (
+      <article class="overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.035]">
+        <img
+          src={certificate.image}
+          alt={certificate.imageAlt}
+          width={certificate.width}
+          height={certificate.height}
+          loading="lazy"
+          decoding="async"
+          class="aspect-[16/10] w-full object-cover"
+        />
+        <div class="space-y-3 p-5 sm:p-6">
+          <span class="font-mono text-xs font-bold uppercase tracking-[0.2em] text-cyan">
+            {certificate.eyebrow}
+          </span>
+          <h3 class="text-2xl font-black text-bone">{certificate.title}</h3>
+          <p class="text-sm leading-7 text-smoke">{certificate.description}</p>
+        </div>
+      </article>
+    ))
+  }
+</div>

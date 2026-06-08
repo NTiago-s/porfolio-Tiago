@@ -1,0 +1,108 @@
+---
+import About from "../components/About.astro";
+import Badge from "../components/Badge.astro";
+import Certificados from "../components/Certificados.astro";
+import DescargarCV from "../components/icons/DescargarCV.astro";
+import EmailIcon from "../components/icons/Mail.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SocialPill from "../components/SocialPill.astro";
+import { HERO_STATS, SITE } from "../data/portfolio";
+---
+
+<Layout
+  title={`${SITE.name} | Portfolio Full Stack`}
+  description={SITE.description}
+>
+  <main id="contenido" class="text-balance">
+    <SectionContainer class="pb-16 pt-32 sm:pt-36 lg:pb-24 lg:pt-44">
+      <div class="mx-auto max-w-5xl animate-fade-up space-y-8 text-center">
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <Badge>Full Stack Developer</Badge>
+          <span class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-smoke">
+            {SITE.location}
+          </span>
+        </div>
+
+        <div class="space-y-5">
+          <h1 class="mx-auto max-w-5xl text-5xl font-black leading-[0.95] text-bone sm:text-6xl lg:text-7xl">
+            Tiago Navarro crea productos web con interfaz, logica y performance.
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg leading-8 text-smoke sm:text-xl">
+            Desarrollo experiencias digitales para marcas, servicios y comunidades:
+            landing pages, dashboards, plataformas con datos reales y productos que se
+            sienten rapidos desde el primer click.
+          </p>
+        </div>
+
+        <div class="flex flex-col justify-center gap-3 sm:flex-row">
+          <LinkButton href="#proyectos" variant="primary">
+            Ver proyectos
+          </LinkButton>
+          <LinkButton href={`mailto:${SITE.email}`} variant="secondary">
+            <EmailIcon class="size-4" aria-hidden="true" />
+            Contactar
+          </LinkButton>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-3" aria-label="Redes y recursos">
+          <SocialPill href={`mailto:${SITE.email}`} ariaLabel="Enviar email a Tiago Navarro">
+            <EmailIcon class="size-4 text-cyan" aria-hidden="true" />
+            {SITE.email}
+          </SocialPill>
+          <SocialPill
+            href={SITE.linkedin}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            ariaLabel="LinkedIn de Tiago Navarro"
+          >
+            <LinkedInIcon class="size-4 text-cyan" aria-hidden="true" />
+            LinkedIn
+          </SocialPill>
+          <SocialPill
+            href={SITE.github}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            ariaLabel="GitHub de Tiago Navarro"
+          >
+            <GithubIcon class="size-4 text-cyan" aria-hidden="true" />
+            GitHub
+          </SocialPill>
+          <SocialPill href={SITE.cv} ariaLabel="Descargar CV de Tiago Navarro" download>
+            <DescargarCV class="size-4 text-cyan" aria-hidden="true" />
+            Descargar CV
+          </SocialPill>
+        </nav>
+      </div>
+    </SectionContainer>
+
+    <div class="space-y-24 pb-10 lg:space-y-32">
+      <SectionContainer id="proyectos">
+        <SectionHeading
+          eyebrow="Proyectos"
+          title="Proyectos con producto, interfaz y negocio en la misma pantalla."
+          description="Cada card prioriza una captura real, el problema que resuelve y el stack usado para construirlo."
+        />
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="experiencia">
+        <SectionHeading
+          eyebrow="Experiencia"
+          title="Formacion y practica aplicada a productos reales."
+          description="Base full stack, trabajo en equipo, criterio visual y foco en entregar interfaces usables."
+        />
+        <Certificados />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <About />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

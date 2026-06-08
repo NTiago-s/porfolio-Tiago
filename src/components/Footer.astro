@@ -1,0 +1,56 @@
+---
+import { SITE } from "../data/portfolio";
+import GithubIcon from "./icons/Github.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import MailIcon from "./icons/Mail.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<footer id="contacto" class="mx-auto w-full max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
+  <div class="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.035] p-6 sm:p-8">
+    <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div class="space-y-4">
+        <p class="font-mono text-xs font-bold uppercase tracking-[0.24em] text-cyan">
+          Disponible para nuevos proyectos
+        </p>
+        <h2 class="max-w-3xl text-3xl font-black leading-tight text-bone sm:text-5xl">
+          Si tu idea necesita una interfaz clara y una base tecnica seria, hablemos.
+        </h2>
+      </div>
+
+      <LinkButton
+        href={`mailto:${SITE.email}`}
+        variant="primary"
+        ariaLabel="Enviar email a Tiago Navarro"
+      >
+        <MailIcon class="size-4 text-ink" aria-hidden="true" />
+        Escribirme
+      </LinkButton>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-smoke sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 {SITE.name}. Portfolio desarrollado con Astro y Tailwind.</p>
+
+      <div class="flex gap-3">
+        <a
+          href={SITE.github}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          class="grid size-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-smoke transition duration-200 hover:border-cyan/35 hover:text-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/70"
+          aria-label="GitHub de Tiago Navarro"
+        >
+          <GithubIcon class="size-5" aria-hidden="true" />
+        </a>
+        <a
+          href={SITE.linkedin}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          class="grid size-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-smoke transition duration-200 hover:border-cyan/35 hover:text-cyan focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/70"
+          aria-label="LinkedIn de Tiago Navarro"
+        >
+          <LinkedInIcon class="size-5" aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

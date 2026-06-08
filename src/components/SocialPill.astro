@@ -1,0 +1,30 @@
+---
+interface Props {
+  href: string;
+  target?: string;
+  rel?: string;
+  class?: string;
+  ariaLabel?: string;
+  download?: boolean | string;
+}
+
+const {
+  href,
+  target,
+  rel,
+  class: className = "",
+  ariaLabel,
+  download,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={rel}
+  aria-label={ariaLabel}
+  download={download}
+  class={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-bone transition duration-200 hover:-translate-y-0.5 hover:border-cyan/40 hover:bg-cyan/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/70 ${className}`}
+>
+  <slot />
+</a>
