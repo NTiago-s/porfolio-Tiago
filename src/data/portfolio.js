@@ -153,6 +153,18 @@ export const PROJECTS = [
     height: 1440,
     tags: [TECH_TAGS.Next, TECH_TAGS.TAILWIND],
   },
+      {
+    title: "KC Interiorismo",
+    eyebrow: "Landing page",
+    description:
+      "Página web profesional para una diseñadora de interiores, desarrollado para presentar sus servicios, proyectos destacados, experiencia y formación en una experiencia visual elegante y cuidada, funcionando a la vez como portfolio y canal de captación de nuevos clientes.",
+    link: "https://kcinteriorismo.codeluxe.tech/",
+    image: "/kc-interiorismo.jpg",
+    imageAlt: "Landing page del proyecto KC Interiorismo",
+    width: 1920,
+    height: 1440,
+    tags: [TECH_TAGS.Next, TECH_TAGS.TAILWIND],
+  },
   {
     title: "Autenticos",
     eyebrow: "Mentorship Commerce",
