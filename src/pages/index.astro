@@ -24,19 +24,23 @@ import { HERO_STATS, SITE } from "../data/portfolio";
       <div class="mx-auto max-w-5xl animate-fade-up space-y-8 text-center">
         <div class="flex flex-wrap items-center justify-center gap-3">
           <Badge>Full Stack Developer</Badge>
-          <span class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-smoke">
+          <span
+            class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-smoke"
+          >
             {SITE.location}
           </span>
         </div>
 
         <div class="space-y-5">
-          <h1 class="mx-auto max-w-5xl text-5xl font-black leading-[0.95] text-bone sm:text-6xl lg:text-7xl">
-            Tiago Navarro crea productos web con interfaz, logica y performance.
+          <h1
+            class="mx-auto max-w-5xl text-5xl font-black leading-[0.95] text-bone sm:text-6xl lg:text-7xl"
+          >
+            Tiago Navarro creo productos web con interfaz, logica y performance.
           </h1>
           <p class="mx-auto max-w-2xl text-lg leading-8 text-smoke sm:text-xl">
-            Desarrollo experiencias digitales para marcas, servicios y comunidades:
-            landing pages, dashboards, plataformas con datos reales y productos que se
-            sienten rapidos desde el primer click.
+            Desarrollo experiencias digitales para marcas, servicios y
+            comunidades: landing pages, dashboards, plataformas con datos reales
+            y productos que se sienten rapidos desde el primer click.
           </p>
         </div>
 
@@ -50,8 +54,14 @@ import { HERO_STATS, SITE } from "../data/portfolio";
           </LinkButton>
         </div>
 
-        <nav class="flex flex-wrap justify-center gap-3" aria-label="Redes y recursos">
-          <SocialPill href={`mailto:${SITE.email}`} ariaLabel="Enviar email a Tiago Navarro">
+        <nav
+          class="flex flex-wrap justify-center gap-3"
+          aria-label="Redes y recursos"
+        >
+          <SocialPill
+            href={`mailto:${SITE.email}`}
+            ariaLabel="Enviar email a Tiago Navarro"
+          >
             <EmailIcon class="size-4 text-cyan" aria-hidden="true" />
             {SITE.email}
           </SocialPill>
@@ -73,7 +83,11 @@ import { HERO_STATS, SITE } from "../data/portfolio";
             <GithubIcon class="size-4 text-cyan" aria-hidden="true" />
             GitHub
           </SocialPill>
-          <SocialPill href={SITE.cv} ariaLabel="Descargar CV de Tiago Navarro" download>
+          <SocialPill
+            href={SITE.cv}
+            ariaLabel="Descargar CV de Tiago Navarro"
+            download
+          >
             <DescargarCV class="size-4 text-cyan" aria-hidden="true" />
             Descargar CV
           </SocialPill>
